@@ -26,10 +26,18 @@ const App = () => {
     },
   ];
 
+  // Data from child to parent...
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
+
   return (
     <div>
       <h2>App js File (demo two)</h2>
-      <NewExpense />
+      {/* Using 'onAddExpense' for data child to parent */}
+      <NewExpense onAddExpense={addExpenseHandler} />
+
       <Expenses items={expenses} />
     </div>
   );
